@@ -42,15 +42,15 @@
     </div>
 
     <div class='row'>
-      <div class='col-md-6'>
+      <div class="card" style="width: 18rem;">
         {% for url in mars.hemisphere_image_urls %}
         <img src="{{ url.img_url }}" class="img-thumbnail" alt="img0">
+        <div class="card-body">
+          <h5 class="card-title">{{ url.title }}</h5>
+        </div>
         {% endfor %}
       </div>
-        
-      </div>
     </div>
-
   </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
