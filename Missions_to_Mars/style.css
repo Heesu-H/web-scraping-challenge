@@ -1,0 +1,57 @@
+/* table styling */
+
+#table {
+    border: 1px;
+    border-style: hidden;
+}
+
+tr{
+    text-align: left;
+}
+
+th{
+    text-align: left;   
+}
+
+
+
+#featured_img{
+    margin-top: 30px;
+}
+
+#image_header{
+    margin-top: 40px;
+    font-size: larger;
+}
+
+
+/* body background */
+body{
+    background-color: rgb(93, 49, 57);
+    color:rgb(175, 126, 126);
+}
+
+
+h1{
+    padding: 25px;
+    text-align: center;
+    font-size: 100px;
+}
+
+h3{
+    margin-top: 50px;
+
+}
+
+h2{
+    margin-top: 60px;
+}
+
+#featured_img{
+    margin-bottom: 70px;
+}
+
+#image_header{
+    font-size: x-large;
+    font-weight: bold;
+}
