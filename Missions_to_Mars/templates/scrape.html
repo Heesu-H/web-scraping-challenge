@@ -20,7 +20,7 @@
     </div>
 
     <div class='row'>
-      <div class='col-lg-9 col-12'>
+      <div class='col-lg-9 col-12' id = "featured_img">
         <h2>
           Featured Mars Image
         </h2>
@@ -36,20 +36,24 @@
     </div>
 
     <div class='row'>
-      <div class = 'col-12'>
+      <div class = 'col-12' id ='image_header'>
         <p>Mars Hemisheres</p>
       </div>
     </div>
 
     <div class='row'>
-      <div class="card" style="width: 18rem;">
-        {% for url in mars.hemisphere_image_urls %}
-        <img src="{{ url.img_url }}" class="img-thumbnail" alt="img0">
-        <div class="card-body">
-          <h5 class="card-title">{{ url.title }}</h5>
+      {% for url in mars.hemisphere_image_urls %}
+      <div class='col-md-6' style="display:inline-block">
+        <div class="card" style="width: 18rem;">
+          <a href='{{ url.img_url }}', target='blank'>
+            <img src="{{ url.img_url }}" class="img-thumbnail" alt="img0">
+            <div class="card-body">
+            <h5 class="card-title">{{ url.title }}</h5>
+          </a>
         </div>
-        {% endfor %}
       </div>
+    </div>
+      {% endfor %}
     </div>
   </div>
 

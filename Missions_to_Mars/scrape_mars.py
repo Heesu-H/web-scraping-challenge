@@ -6,13 +6,15 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 
 
-def init_browser():
+#def init_browser():
     # @NOTE: Replace the path with your actual path to the chromedriver
-    executable_path = {'executable_path': ChromeDriverManager().install()}
-    return Browser("chrome", **executable_path, headless=False)
+    #executable_path = {'executable_path': ChromeDriverManager().install()}
+    #return Browser("chrome", **executable_path, headless=False)
 
 def scrape_titlepara():
-    browser = init_browser()
+
+    executable_path = {'executable_path': ChromeDriverManager().install()}
+    browser = Browser("chrome", **executable_path, headless=False)
 
     url = 'https://mars.nasa.gov/news/?page=0&per_page=40&order=publish_date+desc%2Ccreated_at+desc&search=&category=19%2C165%2C184%2C204&blank_scope=Latest'
     browser.visit(url)
@@ -24,18 +26,19 @@ def scrape_titlepara():
     news_title  = title_para.find('div', class_ = 'content_title').find('a').text.strip()
     news_p  = title_para.find('div', class_='article_teaser_body').text.strip()
 
-    browser.quit()
-
     news_title_p = {
         'news_title':news_title,
         'news_p':news_p
     }
 
+    browser.quit()
+
     return news_title_p
 
 
 def scrape_image_url():
-    browser = init_browser()
+    executable_path = {'executable_path': ChromeDriverManager().install()}
+    browser = Browser("chrome", **executable_path, headless=False)
 
     url = 'https://data-class-jpl-space.s3.amazonaws.com/JPL_Space/index.html'
     browser.visit(url)
@@ -52,7 +55,8 @@ def scrape_image_url():
 
 
 def scrape_marshemi():
-    browser = init_browser()
+    executable_path = {'executable_path': ChromeDriverManager().install()}
+    browser = Browser("chrome", **executable_path, headless=False)
 
     hemisphere_image_urls = []
 
